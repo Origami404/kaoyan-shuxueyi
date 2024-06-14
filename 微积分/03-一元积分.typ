@@ -135,4 +135,11 @@ cases(
 )
 $
 
+=== 应用
+
+- 极座标系求面积: $dif S = 1/2 rho^2 dif theta$
+- 绕 $x$ 轴旋转体: 切成一片片圆盘, $dif V = pi y^2 dot.c dx$
+- 绕 $y$ 轴旋转体: 切成一圈圈圆柱, $dif V = 2 pi x dot.c y dot.c dx$ 
+- $x$, $y$ 由参数方程给出时, 记得先检查参数和 $x$ 是不是一一对应的, 若否则先用对称性限制一下积分区间
+
 #pagebreak()
