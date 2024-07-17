@@ -18,6 +18,7 @@
 - 积分中值
   - 普通形式: 闭连, $exists xi in [a, b]: integral^b_a f(x) dx = f(xi)(b - a)$
   - 加强形式: $xi$ 在开区间里, 需要先对变限函数用拉中证了才能用
+  - 二重形式: 闭区域 $D$ 内连续, 则存在 $(xi, eta) in D$ 使得 $integral.double_D f dif sigma = f(xi, eta) S$, $S$ 为 $D$ 的面积
 - 证明
   - 罗尔证明: 闭连 $->$ 有最值; $f(a) = f(b)$ $->$ 最值不在端点, 在区间内; 然后费马引理立得
   - 拉中证明: 令 $h(x) = f(x) - (f(a) - f(b)) / (a - b)$, 然后对 $h$ 罗尔
