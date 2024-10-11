@@ -35,4 +35,5 @@
 #include "./微积分/06-多元微分学.typ"
 #include "./微积分/07-级数.typ"
 #include "./微积分/08-空间解析几何.typ"
+#include "./线性代数.typ"
 #include "./概率与统计.typ"
