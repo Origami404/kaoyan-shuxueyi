@@ -120,6 +120,10 @@ $
 dif / (dif x) integral^x_c f(t) dif t = f(x)
 $
 
+$
+dif / (dif x) integral^u_c f(t) dif t = (dif u) / (dif x) dif / (dif u) integral^u_c f(t) dif t = (dif u) / (dif x) f(u) 
+$
+
 遇到内层积分是变限积分的二重积分时, 可以把变限积分视作 "容易取得导数的函数", 然后套分部积分公式处理. 一般而言乘积项都会被题目的设计消掉.
 
 如果变限积分内的函数依赖 $x$, 那么不可以直接用上面的公式, 会多出来一项.
@@ -136,6 +140,8 @@ cases(
   (n-1)!! / n!! dot.c pi / 2 " , " n = 2k,
 )
 $
+
+可以用 $n=0$ 的特殊情况记忆上述公式.
 
 === 应用
 

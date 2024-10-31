@@ -22,6 +22,8 @@ $
 y' = phi (y / x) #__to__ dp / (phi(p) - p) = dx / x 
 $
 
+其中 $p = y/x$, 整理成 $y = p x$ 后两边开 $dif$ 就能得到好看的 $dif y$ 换 $dif p$ 的结果.
+
 如果希望做得快, 可以背一下右边的代换后结果.
 
 == 一阶线性方程
@@ -88,19 +90,33 @@ $
 
 对于特殊形式的非齐次项, 我们可以用*待定系数法*求特解:
 
-$
-f = p(x) e^(lambda x)  #_to_ y^* = x^k Q_m (x) e^(lambda x) \
-f = [p^+(x) cos omega x + p^-(x) sin omega x] e^(lambda x) #_to_ y^* = x^k [Q_m^+ (x) cos omega x + Q_m^- (x) sin omega x] e^(lambda x)
-$
+#let mblue(x) = text(fill: blue)[$#x$]
+#let mgreen(x) = text(fill: green)[$#x$]
 
-特解由三个部分组成
+$
+f = p_m mblue(e^(lambda x)) 
+#_to_ 
+y^* = Q_m mblue(x^k e^(lambda x)) \
+
+f = (p_m^+ cos omega x + p_m^- sin omega x) mblue(e^(lambda x))
+#_to_ 
+y^* = [Q_m^+ cos omega x + Q_m^- sin omega x] mblue(x^k e^(lambda x))
+$
 
 #set list(marker: ([⤥], [›]))
 
+记忆方法:
+
+- $e^(lambda x)$ 对应 $x^(lambda "重数") e^(lambda x)$
+  - 带三角的应该计算 $lambda + omega i$ 重数 
+- 多项式或者虚多项式替换成同阶的待定系数的多项式
+
+特解由三个部分组成
+
 - $x^k$ 是重根修正项
-  - 如果 $lambda$ 恰好是特征方程的 $k$ 重根, 那么就要多一项 $x^k$; 
-  - 如果 $lambda$ 不是根, 那么 $k = 0$, $x^k = 1$ 可直接省略.
-- $Q_m (x)$ 是一个和 $p(x)$ 阶数相同的多项式, 系数待定, 等待代回原微分方程求解.
+  - 如果 $lambda$ 或 ($lambda + omega i$) 恰好是特征方程的 $k$ 重根, 那么就要多一项 $x^k$; 
+  - 如果 $lambda$ 或 ($lambda + omega i$) 不是根, 那么 $k = 0$, $x^k = 1$ 可直接省略.
+- $Q_m$ 是一个和 $p_m$ 阶数相同的多项式, 系数待定, 等待代回原微分方程求解.
 - $e^(lambda x)$ 是特解必须具有的形式
 
 == 欧拉方程
