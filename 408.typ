@@ -21,7 +21,7 @@
   paper_size: "a4",
   cols: 1,
   text_font: "Noto Serif CJK SC",
-  code_font: "Cascadia Mono",
+  code_font: "CaskaydiaCove NFM",
   accent: blue, // blue
 )
 
