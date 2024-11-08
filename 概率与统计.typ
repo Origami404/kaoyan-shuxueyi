@@ -31,7 +31,7 @@ $
 
   [], [二项分布], [几何分布], [泊松分布],
   [符号],  [$B(n, p)$], [$G(p)$], [$P(lambda)$],
-  [分布律], [$P{X=k} = C_n^k p^k (1-p)^(n-k)$], [$P{X=k}=(1-p)^(k-1) p$], [$P{X=k} = lambda^k / k! e^(-lambda)$],
+  [$P{X=k}$], [$C_n^k p^k (1-p)^(n-k)$], [$(1-p)^(k-1) p$], [$lambda^k / k! e^(-lambda)$],
   [期望], [$n p$], [$1/p$], [$lambda$], 
   [方差], [$n p (1-p)$], [$(1-p)/p^2$], [$lambda$]
 )
@@ -48,6 +48,8 @@ $
 )
 
 指数分布有无记忆性: $P{X > s + t | Y > s} = P{Y > t}$
+
+不同正态分布的变量的和与差同样也是正态分布: $X plus.minus Y ~ N(mu_X plus.minus mu_Y, sigma_X^2 colored(+) sigma_Y^2)$
 
 == 分布函数求法
 

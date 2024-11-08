@@ -103,6 +103,7 @@ $
   - 垂直: $lim_(x -> a^+ "/" a^-) f(x) = plus.minus infinity$           #h(5em)   $=>$ #h(1em) $x = a$
   - 水平: $lim_(x -> + infinity "/" - infinity) f(y) = a$               #h(5.4em) $=>$ #h(1em) $y = a$
   - 倾斜: $lim_(x -> + infinity "/" - infinity) [f(x) - (k x + b)] = 0$ #h(0.3em) $=>$ #h(1em) $y = k x + b$
+    - $k = lim y / x$, $b = lim (y - k x)$
 - *单调性*
   - 同济的单调性是严格单调性
   - 对任意两点 $x_1 > x_2 => f(x_1) > f(x_2)$
