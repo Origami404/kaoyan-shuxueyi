@@ -156,7 +156,7 @@ $
 利用上边的抽样分布, 可以得到一些非标准正态分布总体下样本的统计量性质. 设样本 ${X_i}_n ~ N(mu, sigma^2)$:
 $
 avg(X) ~ N(mu, sigma^2 / n) quad quad avg(X) tack.t S^2 quad quad sum ((X_i - mu) / sigma)^2 ~ chi^2(n) \
-((n-1)S^2) / sigma^2 = sum ((X_i - avg(X))/sigma)^2 ~ chi^2(n - 1) quad quad Var(S^2) = (2 sigma^2)/(n - 1) \
+((n-1)S^2) / sigma^2 = sum ((X_i - avg(X))/sigma)^2 ~ chi^2(n - 1) quad quad Var(S^2) = (2 sigma^4)/(n - 1) \
 (avg(X) - mu) / (S \/ sqrt(n)) quad~quad t(n - 1)
 $
 
