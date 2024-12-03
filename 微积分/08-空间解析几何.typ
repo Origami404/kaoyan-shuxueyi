@@ -144,4 +144,14 @@ $
 
 特别地, 直线到平面上的投影可以通过直线方向向量和平面法向量叉积求得一个过直线且垂直于平面的平面, 然后此二平面相交即可得到投影直线. 当然, 也可以用方向向量求出它在平面法向量上的垂直分量, 并上直线和平面的交点直接得到投影直线的点法式.
 
+=== 形心
+
+$
+hat(x) = (integral.triple_Omega x dif V) / V
+quad quad
+hat(y) = (integral.triple_Omega y dif V) / V
+quad quad
+hat(z) = (integral.triple_Omega z dif V) / V
+$
+
 #pagebreak()
