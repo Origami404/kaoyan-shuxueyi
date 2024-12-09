@@ -6,7 +6,7 @@
 
 #figure(image("../assets/三角函数六角图.png", width: 75%))
 
-== 和差化积
+== 和差化积 (积化和差可以一起推出来)
 
 $
 sin(alpha plus.minus beta) &= sin alpha cos beta plus.minus cos alpha sin beta \
@@ -32,18 +32,17 @@ $
   [原函数], [$-cos$], [$sin$], [$-ln|cos|$], [$ln|sin|$], [$ln|sec + tan|$], [$ln|csc - cot|$],
 )
 
-\
-
 $
-dif arcsin &= 1 / sqrt(1 - x^2) dif x \
-dif arccos &= - 1 / sqrt(1 - x^2) dif x = - dif arcsin \
+dif arcsin &= 1 / sqrt(1 - x^2) dif x 
+quad quad
 dif arctan &= 1 / (1 + x^2) dif x \
 $
 
 == 级数
 
 $
-sin &= sum (-1)^n / (2n + 1)! x^(2n + 1) \
+sin &= sum (-1)^n / (2n + 1)! x^(2n + 1)
+quad quad
 cos &= sum (-1)^n / (2n)! x^(2n) \
 $
 

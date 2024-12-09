@@ -25,7 +25,8 @@
   accent: blue, // blue
 )
 
-#show heading: it => { it; h(1em) }
+#show heading: it => { v(0.4em); it; v(-0.1em); }
+#show math.equation.where(block: true): it => {v(0.5em); it; v(0.5em);}
 
 #include "./微积分/01-三角函数公式.typ"
 #include "./微积分/02-极限与导数.typ"

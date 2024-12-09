@@ -10,8 +10,9 @@
 多项式和对数:
 
 $
-integral x^a dx &= 1 / (a + 1) x^(a + 1) + C \
-integral a^x dx &= 1 / (ln a) a^x + C \
+integral x^a dx &= 1 / (a + 1) x^(a + 1) + C
+quad quad
+integral a^x dx &= 1 / (ln a) a^x + C
 $
 
 三角函数:
@@ -33,15 +34,19 @@ $
 
 === 换元 / 凑微分
 
+#grid(columns: (1.1fr, 1fr), gutter: 2em)[
 识别到常见的微分结构, 但是这个结构里的 "$x$" 比较复杂, 而且旁边还多乘了一个东西的时候可以用.
 
 识别到无法直接处理的函数复合的时候可以用 ($arctan sqrt(x)$ 之类).
 
-识别到需要三角换元的时候可以用:
+一个常见积分:
 
-#figure(image("../assets/第一类换元-三角换元.png", width: 60%))
-
-换元的时候一定要记得有时候
+$
+  integral dx / sqrt(x^2 - 1) = ln(x + sqrt(x^2 - 1)) + C
+$
+][
+#figure(image("../assets/第一类换元-三角换元.png"))
+]
 
 === 分部积分
 
@@ -52,6 +57,10 @@ $
 识别到目标积分是两个部分乘起来, 并且其中一个部分求导之后比原来简单的时候用. 一般来讲反三角和多项式求导后比求导前简单, 所以优先尝试让它们被导一次. 
 
 要额外注意分部后的正负号, 一般都是负号.
+
+对于需要进行多次的分步积分, 有一种操作比较便捷的算法称为 "表格法":
+
+#align(center)[#image("../assets/分部积分表格法.png", width: 50%)]
 
 === 有理分式积分
 
@@ -128,6 +137,21 @@ $
 
 如果变限积分内的函数依赖 $x$, 那么不可以直接用上面的公式, 会多出来一项.
 
+- 变限积分的性质:
+  - 仅在 $f(x)$ 的无穷间断点处不连续
+  - 仅在 $f(x)$ 的跳跃点处不可导
+
+=== 反常积分
+
+反常积分敛散性判断和级数差不多, 都是和指标相比. 常见指标积分:
+
+
+$
+integral^(+ infinity)_1 1/x^p dx quad (p > 1 "收敛")
+quad quad quad
+integral_0^1 1/x^q dx quad (q < 1 "收敛")
+$
+
 === 华莱士公式 / 点火公式
 
 #set math.cases(gap: 1em)
@@ -142,6 +166,27 @@ cases(
 $
 
 可以用 $n=0$ 的特殊情况记忆上述公式.
+
+=== 区间再现
+
+$
+integral_a^b f(x) dx = integral_a^b f(a + b - x) dx
+$
+
+非常适合形如 $x f(x)$ 形式的被积函数, 可以直接消去 $x$, 因为此时有:
+
+$
+integral_a^b x f(x) dx = 1/2 (integral_a^b x f(x) dx + integral_a^b (a + b - x) f(x) dx) = (a + b) / 2 integral_a^b f(x) dx
+$
+
+非常适合*被积函数关于积分区间中点具有某种对称性*的情况, 比如三角函数. 有推广公式:
+
+若 $f(x) = f(a + b - x)$ (关于区间中点偶函数), $g(x) + g(a + b - x) = m$ (关于区间中点奇函数), 则:
+
+$
+integral_a^b f(x) g(x) dx = m/2 integral_a^b f(x) dx
+$
+
 
 === 应用
 
