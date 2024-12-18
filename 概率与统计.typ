@@ -1,4 +1,5 @@
 #import "./template.typ": sectionline, gray_table, colored
+#import "@preview/tablex:0.0.9": tablex, rowspanx, colspanx
 
 #let Ex = $upright(E)$
 #let Var = $upright(D)$
@@ -134,8 +135,8 @@ $
   - $k$ 阶原点矩: $A_k = 1/n sum X_i^k$
   - $k$ 阶中心矩: $B_k = 1/n sum (X_i - avg(X))^k$
 - 重要统计量性质
-  - $Ex(avg(X)) = Ex("分布")$, $Var(avg(X)) = 1/n Var("分布")$
-  - $Ex(S^2) = Var("分布")$
+  - $Ex(avg(X)) = Ex("分布")$, $Var(avg(X)) = 1/n Var("分布")$, $Ex(S^2) = Var("分布")$
+- 切夫雪比定理: $P{|X - Ex(X)| >= epsilon} <= Var(X) / epsilon^2$ (记住 $>= epsilon <=$)
 
 === 抽样分布
 
@@ -174,3 +175,31 @@ $
   - 无偏性: $Ex(hat(theta)) = theta$
   - 比较哪个估计更有效: $Var(hat(theta_1)) < Var(hat(theta_2))$
   - 相合性: $n -> +infinity$ 时, $hat(theta)$ 依概率收敛到 $theta$
+
+#pagebreak()
+
+== 区间估计
+
+根据所给的显著性水平 (错误率) $alpha$, 寻找枢轴变量 $Y$ 使得在某个区间内: $P{"_" <= Y <= "_"} = 1 - alpha$, 然后解出参数所在区间.
+
+注意置信度是 $1 - alpha$
+
+#align(center)[
+#let large(it) = text(size: 1.2em, it)
+枢轴变量表格 (求 $sigma^2$ $mu$ 已知的情况也可以用第一行的枢轴变量)
+#tablex(
+  columns: 4,
+  align: center + horizon,
+  auto-vlines: false,
+  inset: 1.2em,
+
+  rowspanx(2)[求 $mu$],       [$sigma^2$ 已知], large[$(avg(X) - mu) / (sigma \/ sqrt(n)) ~ N(0, 1)$], rowspanx(2)[PDF 偶函数, $u_(-alpha/2)$, $u_(alpha/2)$],
+  (),                         [$sigma^2$ 未知], large[$(avg(X) - mu) / (S \/ sqrt(n)) ~ t(n - 1)$],    (),
+  rowspanx(2)[求 $sigma^2$],  [$mu$ 已知], large[$(sum (X_i - mu)^2 / sigma^2) ~ chi^2(n)$],           rowspanx(2)[PDF 偏的, $u_(1-alpha/2)$, $u_(alpha/2)$],
+  (),                         [$mu$ 未知], large[$((n - 1) S^2) / sigma^2 ~ chi^2(n - 1)$],            (),
+)
+]
+
+== 假设检验
+
+先选择 $alpha$, 然后算出 $u_(alpha / 2)$ 之后看 $|(avg(X) - mu) / (sigma \/ sqrt(n))|$ 的值是否超过了分位点.
